@@ -9,10 +9,9 @@ function App() {
       <Header/>
       </div>
       <div className="container">
-        <h3>Text Editer...</h3>
         </div>
         <div>
-      <TextEditer/>
+      <TextEditer Heading="Text Editer..."/>
       </div>
     </>
   );
