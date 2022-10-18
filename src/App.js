@@ -9,7 +9,7 @@ function App() {
       <Header/>
       </div>
       <div className="container">
-        <h1>This is text editer project</h1>
+        <h3>Text Editer...</h3>
         </div>
         <div>
       <TextEditer/>
