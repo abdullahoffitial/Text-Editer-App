@@ -2,17 +2,40 @@ import { useState } from "react";
 
 export default function TextEditer(props) {
   const uperCase = () => {
-    console.log("UperCase was clicked" + Text);
+    //console.log("UperCase was clicked" + Text);
     let newText = Text.toUpperCase();
     setText(newText);
   };
+
   const lowerCase = () => {
-    console.log("UperCase was clicked" + Text);
+    //console.log("UperCase was clicked" + Text);
     let newText = Text.toLowerCase();
     setText(newText);
   };
+
+  
+  const clearText = () => {
+    //console.log("UperCase was clicked" + Text);
+    let newText = ("");
+    setText(newText);
+  };
+  
+  const copy = () => {
+    //console.log("UperCase was clicked" + Text);
+    var Text = document.gitElementById("mybox");
+    Text.select();
+    navigator.clipboard.writeText(Text.value);
+    
+  };
+  const respaces = () => {
+    //console.log("UperCase was clicked" + Text); rejux concept
+    let newText = Text.split(/[ ]+/);
+    setText(newText.join(' '))
+    
+  };
+  
   const handleOnChange = (event) => {
-    console.log("Handle on change");
+    //console.log("Handle on change");
     setText(event.target.value);
   };
 
@@ -37,12 +60,23 @@ export default function TextEditer(props) {
         <button type="button" class="btn btn-primary mx-2" onClick={lowerCase}>
           Convert to lowercase
         </button>
-        <button type="button" class="btn btn-primary mx-2">
+        <button type="button" class="btn btn-primary mx-2" onClick={clearText}>
+          Clear Text
+        </button>
+        <button type="button" class="btn btn-primary mx-2" onClick={copy}>
           Copy
         </button>
-        <button type="button" class="btn btn-primary mx-2">
-          Paste
+        <button type="button" class="btn btn-primary mx-2" onClick={respaces}>
+          Remove Extra Spaces
         </button>
+      </div>
+      <div className="container my-3">
+
+            <h2>Your Text Summary</h2>
+            <p><b>{Text.split(" ").length}</b> Words and <b>{Text.length}</b> Characters</p>
+            <p><b>{0.01 * Text.split(" ").length}</b> Minutes to read</p>
+            <h3>Preview</h3>
+            <p>{Text}</p>
       </div>
     </>
   );
