@@ -5,12 +5,14 @@ export default function TextEditer(props) {
     //console.log("UperCase was clicked" + Text);
     let newText = Text.toUpperCase();
     setText(newText);
+      
   };
 
   const lowerCase = () => {
     //console.log("UperCase was clicked" + Text);
     let newText = Text.toLowerCase();
     setText(newText);
+    
   };
 
   
@@ -18,19 +20,20 @@ export default function TextEditer(props) {
     //console.log("UperCase was clicked" + Text);
     let newText = ("");
     setText(newText);
-  };
-  
-  const copy = () => {
-    //console.log("UperCase was clicked" + Text);
-    var Text = document.gitElementById("mybox");
-    Text.select();
-    navigator.clipboard.writeText(Text.value);
     
   };
+
+  const copy = async () => {
+    await navigator.clipboard.writeText(Text);
+    
+  }
+  
+  
   const respaces = () => {
     //console.log("UperCase was clicked" + Text); rejux concept
     let newText = Text.split(/[ ]+/);
     setText(newText.join(' '))
+    
     
   };
   
@@ -46,7 +49,7 @@ export default function TextEditer(props) {
       <h3 className="container my-3">{props.Heading}</h3>
       <div className="container">
         <div className="mb-3">
-          <textarea
+          <textarea 
             class="form-control"
             value={Text}
             onChange={handleOnChange}
@@ -57,15 +60,18 @@ export default function TextEditer(props) {
         <button type="button" class="btn btn-primary mx-2" onClick={uperCase}>
           Convert to Upercase
         </button>
+        
         <button type="button" class="btn btn-primary mx-2" onClick={lowerCase}>
           Convert to lowercase
         </button>
         <button type="button" class="btn btn-primary mx-2" onClick={clearText}>
           Clear Text
         </button>
+
         <button type="button" class="btn btn-primary mx-2" onClick={copy}>
-          Copy
+          Copy Text
         </button>
+        
         <button type="button" class="btn btn-primary mx-2" onClick={respaces}>
           Remove Extra Spaces
         </button>
