@@ -13,7 +13,7 @@ function App() {
       <div className="container">
         </div>
         <div>
-      <TextEditer  Heading="Text Editer..."/>
+      <TextEditer  Heading="Text Editor..."/>
       </div>
     </>
   );
