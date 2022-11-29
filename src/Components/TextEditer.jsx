@@ -29,14 +29,10 @@ export default function TextEditer(props) {
     setText(newText.join(" "));
   };
 
-  // const words = () => {
-
-    // let wrd = Text.replace(/\s+/g,'');
-  // let setword = Text.split(" ").length;
-
+  // const bld = () => {
+  //     var newText = new RegExp(find, 'g');
+  //   return Text.replace(newText, '<b>'+find+'</b>');
   // };
-
-  
 
   const handleOnChange = (event) => {
     //console.log("Handle on change");
@@ -85,6 +81,11 @@ export default function TextEditer(props) {
         <button type="button" class="btn btn-primary mx-2" onClick={respaces}>
           Remove Extra Spaces
         </button>
+
+        {/* <button type="button" class="btn btn-primary mx-2" onClick={bld}>
+          B
+        </button> */}
+
       </div>
       <div className="container my-3">
         <h2>Your Text Summary</h2>
@@ -93,7 +94,7 @@ export default function TextEditer(props) {
           Characters
         </p>
         <p>
-          <b>{0.01 * Text.split(" ").length}</b> Minutes to read
+          <b>{0.01 * word}</b> Minutes to read
         </p>
         <h3>Preview</h3>
         <p>{Text}</p>
