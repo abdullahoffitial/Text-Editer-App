@@ -52,7 +52,8 @@ export default function TextEditer(props) {
 
   return (
     <>
-      <h3 className="container my-3">{props.Heading}</h3>
+      <h3 className="container my-3">{props.Heading}</h3> 
+      <h3 className="container my-3">{props.num}</h3>
       <div className="container">
         <div className="mb-3">
           <textarea
