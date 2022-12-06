@@ -14,7 +14,7 @@ function App() {
         </div>
         <div>
           {/* props concept */}
-      <TextEditer  Heading="Text Editor..." num="1"/>
+      <TextEditer  Heading="Text Editor..."/>
       </div>
     </>
   );
