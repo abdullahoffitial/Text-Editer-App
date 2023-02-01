@@ -44,7 +44,7 @@ function TodoApp() {
         onChange={handleNewTodoChange}
       />
       <Button variant="contained" onClick={handleAddTodo}>Add</Button>
-      <Button variant="contained" onClick={handleDeleteAllTodo}>Delete All</Button>
+      
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>
@@ -54,6 +54,7 @@ function TodoApp() {
             </li>
         ))}
       </ul>
+      <Button variant="contained" onClick={handleDeleteAllTodo}>Delete All</Button>
     </div>
   );
 }
